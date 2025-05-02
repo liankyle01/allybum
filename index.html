@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All About Us</title>
+ <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+     <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #121212;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-bottom: 150px;
+        }
+        h1 {
+            color: #b388ff;
+            margin-bottom: 30px;
+            font-size: 3em;
+            font-family: 'Dancing Script', cursive;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .gallery img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 3px solid #8a2be2;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(138,43,226,0.4);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 100;
+            text-align: center;
+        }
+        .modal-content {
+            background: #222;
+            margin: 50px auto;
+            padding: 20px;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(138,43,226,0.5);
+        }
+        .modal img {
+            max-width: 100%;
+            max-height: 400px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .memory-text {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            padding: 10px;
+            color: #eee;
+            font-family: 'Dancing Script', cursive;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover {
+            color: #fff;
+        }
+        .playlist {
+            background: #181818;
+            padding: 20px;
+            margin-top: 50px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .playlist h2 {
+            color: #1db954;
+            margin-bottom: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .songs {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .song {
+            width: 120px;
+            text-align: center;
+        }
+        .song img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .song p {
+            margin: 5px 0;
+            font-size: 0.95rem;
+        }
+        .song audio {
+            width: 100%;
+            height: 30px;
+            margin-top: 5px;
+        }
+        footer {
+            margin-top: 100px;
+            font-size: 0.9rem;
+            color: #888;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>💜💜💜My ALLYbum💜💜💜</h1>
+    
+    <div class="gallery">
+        <img src="anniv.jpeg" onclick="showMemory('anniv.jpeg', 'Gusto natin ma experience pumunta sa Ronac for our monthsary. I enjoy being with you on every gala, and I will cherish every moment with you.')">
+        <img src="bday.jpeg" onclick="showMemory('bday.jpeg', 'It\'s My Birthday and I decided to be with you. Every bite taste like heaven because I am with you.')">
+        <img src="bond.jpeg" onclick="showMemory('bond.jpeg', 'I enjoy simple bonding moments with you.')">
+        <img src="enroll.jpeg" onclick="showMemory('enroll.jpeg', 'Sinamahan mo ako mag enroll. Gumala tayo after.')">
+        <img src="grad.jpeg" onclick="showMemory('grad.jpeg', 'It\'s our graduation! I am so proud na nakaya natin. I want to be there every step of the way. I want to celebrate every milestone with you.')">
+        <img src="lowk.jpeg" onclick="showMemory('lowk.jpeg', 'Na a-alala ko pa to HAAHAHA lowkey momentss')">
+        <img src="months.jpeg" onclick="showMemory('months.jpeg', 'Monthsary tas in heat ka??? hayss')">
+        <img src="muse.jpeg" onclick="showMemory('muse.jpeg', 'Another Museum date. Pero after ojt naman siya.')">
+        <img src="ncaa.jpeg" onclick="showMemory('ncaa.jpeg', 'NCAA. Thank you for coming with me love!')">
+        <img src="photo.jpeg" onclick="showMemory('photo.jpeg', 'After OJT nag spend nanaman tayo ng money and time together HAHAHHAHA')">
+        <img src="play.jpeg" onclick="showMemory('play.jpeg', 'Eto yung sinama mo ako sa film showing niyoo. Naalala ko nag tae pa ko niyan HAHAHHA.')">
+        <img src="random.jpeg" onclick="showMemory('random.jpeg', 'Sponty date sa SM San Lazaro. Miss kasi natin isa\'t isa e')">
+        <img src="review.jpeg" onclick="showMemory('review.jpeg', 'Nakakamiss kasi magkasama yung section natin noon lagi sa mga events and even sa mga review sessions')">
+        <img src="shs.jpeg" onclick="showMemory('shs.jpeg', 'After class to nung SHS pa tayo. Ayaw mo pa umuwi dahil ayaw mo sa inyo. I am enjoying being your company.')">
+        <img src="solar.jpeg" onclick="showMemory('solar.jpeg', 'Family date!! first ever meet up niyo ng anak natin HAHAHA')">
+        <img src="sponty.jpeg" onclick="showMemory('sponty.jpeg', 'Another Random Date. Pero nag e-enjoy ako kasi kasama kita')">
+        <img src="sundou.jpeg" onclick="showMemory('sundou.jpeg', 'Sinundo kita kasi masakit paa mo. Ending puro kain lang tayo HAHAHAHA')">
+        <img src="urbday.jpeg" onclick="showMemory('urbday.jpeg', 'Birthday mo. I feel bad kasi instead na naghahandaan sa inyo, you chose to be with me. Hindi kita pinilit. But I know kaya rin tayo nag kita kasi we miss each other, since we\'re busy noong holiday and New Year')">
+        <img src="valentines.jpeg" onclick="showMemory('valentines.jpeg', 'Valentines!! Sarap ng samgyup. Nag enjoy meee')">
+        <img src="week.jpeg" onclick="showMemory('week.jpeg', 'MR. DIY Date HAHAHAH')">
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('myModal').style.display='none'">×</span>
+            <img id="modalImage">
+            <p id="memoryText" class="memory-text"></p>
+        </div>
+    </div>
+
+    <div class="playlist">
+        <h2>🎧Our Top Playlist🎧</h2>
+        <div class="songs">
+            <div class="song">
+                <img src="bs.jpeg" alt="Song 1" onerror="this.src='https://via.placeholder.com/100?text=No+Image'">
+                <p><b>Our Special Song</b></p>
+                <p>Sa Bawat Sandali</p>
+                <audio controls><source src="Sa Bawat Sandali - Amiel Sol (Visualizer).mp3" type="audio/mpeg"></audio>
+            </div>
+            <div class="song">
+                <img src="bk.jpg" alt="Song 2" onerror="this.src='https://via.placeholder.com/100?text=No+Image'">
+                <p><b>Our Love Love Love Song</b></p>
+                <p>Buko</p>
+                <audio controls><source src="Buko - Jireh Lim (Lyrics).mp3" type="audio/mpeg"></audio>
+            </div>
+            <div class="song">
+                <img src="pr.jpg" alt="Song 3" onerror="this.src='https://via.placeholder.com/100?text=No+Image'">
+                <p><b>Our Memory Song</b></p>
+                <p>Paper Rings</p>
+                <audio controls><source src="Taylor Swift - Paper Rings (Official Audio).mp3" type="audio/mpeg"></audio>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showMemory(imgSrc, text) {
+            document.getElementById('modalImage').src = imgSrc;
+            document.getElementById('memoryText').textContent = text;
+            document.getElementById('myModal').style.display = 'block';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('myModal')) {
+                document.getElementById('myModal').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
